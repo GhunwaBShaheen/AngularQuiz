@@ -1,0 +1,34 @@
+<div [ngBusy]="busy" (busyStop)="onBusyStop()" (busyStart)="onBusyStart()">
+  <div *ngFor="let user of usersList; let i = index" style="text-align: center">
+    <mat-card class="example-card" (click)="showUser(user)" [@enterLeft]>
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image rounded-circle">
+          <img
+            class="rounded-circle"
+            mat-card-image
+            src="{{ user.avatar }}"
+            alt="User avatar"
+          />
+        </div>
+        <mat-card-title>{{ user.first_name }}</mat-card-title>
+        <mat-card-subtitle>{{ user.last_name }}</mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content> </mat-card-content>
+    </mat-card>
+    <br />
+  </div>
+
+  <mat-paginator
+    *ngIf="usersList.length > 0"
+    #paginator
+    [length]="total"
+    [pageIndex]="page"
+    [pageSize]="per_page"
+    (page)="pageEvent = getNavicationData($event)"
+    showFirstLastButtons
+    style="float: right"
+    class="center"
+  >
+  </mat-paginator>
+</div>

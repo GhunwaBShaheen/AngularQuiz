@@ -1,0 +1,24 @@
+<mat-toolbar color="primary">
+  <div class="col-sm-3">
+    <span style="margin-top: 20px">Angular Quiz</span>
+  </div>
+  <div class="col-sm-6"></div>
+  <div class="col-sm-3">
+    <form
+      class="example-form"
+      style="font-size: medium; float: right"
+      onSubmit="return false;"
+    >
+      <mat-form-field class="example-full-width">
+        <input
+          type="text"
+          matInput
+          placeholder="Enter Id please"
+          floatLabel="never"
+          (input)="search($event)"
+        />
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+    </form>
+  </div>
+</mat-toolbar>

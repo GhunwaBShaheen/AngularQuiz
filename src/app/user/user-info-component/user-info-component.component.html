@@ -1,0 +1,46 @@
+<br />
+<br />
+<div class="row col-sm-12">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-8">
+    <button mat-mini-fab color="primary" (click)="backToUsers()">
+      <mat-icon>undo</mat-icon>
+    </button>
+  </div>
+  <div class="col-sm-2"></div>
+</div>
+<mat-card class="example-card" *ngIf="user" [@enterRight]>
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image rounded-circle">
+      <img
+        mat-card-image
+        class="rounded-circle"
+        src="{{ user.avatar }}"
+        alt="User avatar"
+      />
+    </div>
+    <mat-card-title>{{ user.first_name }}</mat-card-title>
+    <mat-card-subtitle>{{ user.last_name }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <br />
+    <div class="row col-sm-12">
+      <div class="col-sm-6">
+        <span> <b>First Name: </b></span> <span> {{ user.first_name }}</span>
+      </div>
+      <div class="col-sm-6">
+        <span> <b>Last Name: </b></span> <span> {{ user.last_name }}</span>
+      </div>
+    </div>
+    <br />
+    <div class="row col-sm-12">
+      <div class="col-sm-6">
+        <span> <b>Email: </b></span> <span> {{ user.email }}</span>
+      </div>
+      <div class="col-sm-6">
+        <span> <b>Id: </b></span> <span> {{ user.id }}</span>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
